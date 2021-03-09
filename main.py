@@ -19,15 +19,18 @@ def is_valid(input_list):
     return True
 
 def player_move(player_input):
-    player_input = move_dict[player_input]
-    input_list = player_input.split()
-    is_valid(input_list)
-    board[int(input_list[0])][int(input_list[1])] = 'X'
+    player_coordinates = move_dict[player_input]
+    input_list = player_coordinates.split()
+    if is_valid(input_list):
+        board[int(input_list[0])][int(input_list[1])] = 'X'
+
     print_board(board)
     win_check()
 
 def comp_move():
     print('FIXME: AI move (comp_move())')
+    
+
     sleep(1)
     print_board(board)
     win_check()
